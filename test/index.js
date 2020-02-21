@@ -97,7 +97,7 @@ async function getTopKClasses(logits, topK) {
   valuesAndIndices.sort((a, b) => {
     return b.value - a.value;
   });
-  const topkValues = new Float32Array(topK-1);
+  const topkValues = new Float32Array(topK);
   const topkIndices = new Int32Array(topK);
   for (let i = 0; i < topK; i++) {
     topkValues[i] = valuesAndIndices[i].value;
